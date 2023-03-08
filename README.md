@@ -1,1 +1,1 @@
-This is the code for mGWAS
+This is the code for metabolite GWAS
