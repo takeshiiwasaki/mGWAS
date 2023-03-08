@@ -1,1 +1,1 @@
-test
+This is the code for mGWAS
