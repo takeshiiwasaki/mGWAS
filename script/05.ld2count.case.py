@@ -5,18 +5,19 @@ import pandas as pd
 import collections
 import itertools
 
+####################################################################################################
+LEAD="<Fill the path to input file of 04_get_ld.lead.snp.sh.>"
+LEAD_LD="<Fill the path to the output directory of 04_get_ld.lead.snp.sh.>"
+FUNCTION_REF="<Fill the path to the output directory of 01.prep.sh.>"
+#####################################################################################################
+lead_file=pd.read_table(LEAD,header=None)
 for i in range(1,24):
-	code= 'anno_{} = pd.read_table("/home/tiwasaki/GCMS/permutation.spline3/1K/function/"+str({})+".anno.tsv")'.format(i,i)
+	code= 'anno_{} = pd.read_table("{}"+"/"+str({})+".anno.tsv")'.format(i,FUNCTION_REF,i)
 	exec(code)
 
-lead=range(1,76)
-#ex=[27,30,86,97,98,107,108,112,115,116,117,118] ##30,86: chrX
-#for i in ex:
-#	lead.remove(i)
-
 all=pd.DataFrame()
-for l in lead:
-	target=pd.read_table("/home/tiwasaki/GCMS/permutation.median.PC10/01data/case.ld/"+str(l)+".ld",delim_whitespace=True)
+for l in range(1,len(lead_file)+1):
+	target=pd.read_table(LEAD_LD+str(l)+".ld",delim_whitespace=True)
 	if target.empty:
 		continue
 	targetR2=target[(target["R2"] > 0.8)].reset_index(drop=True)
@@ -26,10 +27,6 @@ for l in lead:
 	res = [ flatten for inner in anno for flatten in inner ]
 	t=pd.DataFrame(list(set(res)), columns=[l]).T
 	all=pd.concat([all,t])
-	#all.append(list(set(res)))
-#res2 = [ flatten for inner in all for flatten in inner ]
-#annoresult = collections.Counter(res2)
-#result=pd.Series(annoresult)
-all.to_csv("/home/tiwasaki/GCMS/permutation.median.PC10/01data/case.ld/result",sep="\t")
-#result.to_csv("/home/tiwasaki/GCMS/permutation.median/01data/case.ld/result2",sep="\t")
+
+all.to_csv(LEAD_LD+"/result",sep="\t")
 

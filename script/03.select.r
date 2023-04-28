@@ -1,6 +1,3 @@
-# Fix bug in 03_select_LeadSNPs.r for very small P values
-
-# library(qqman)
 library(data.table)
 
 margin = 500000
@@ -72,10 +69,3 @@ for(m in ms$V1){
 }
 
 write.table(assocSNPs, outFile, col.name=T, row.name=F, quote=F, sep="\t")
-
-# options(width=500)
-# print(leadSNPs)
-
-# png(out,height=600,width=800)
-# manhattan(gwas_dat, chr = "CHROM", bp = "POS", p = "P", snp = "ID", highlight = highlights, main = title)
-# dev.off()
