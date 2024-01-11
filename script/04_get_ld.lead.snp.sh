@@ -1,7 +1,7 @@
 #!/bin/bash
 
-INPUT="<Please fill in the path to input file>"
-OUTPUT="<Please fill in the path to input directory>"
+INPUT="<Please fill in the path to input file, in which the first column represents the chromosome, and the second column represents SNPID>"
+OUTPUT="<Please fill in the path to onput directory>"
 LD_REF="<Please fill in the path to the directory of 1KG reference.>"
 
 ln=`wc -l $INPUT | awk '{print $1}'`

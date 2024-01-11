@@ -5,11 +5,12 @@ import pandas as pd
 import collections
 import itertools
 
-####################################################################################################
+#####################################################################################################
 LEAD="<Fill the path to input file of 04_get_ld.lead.snp.sh.>"
 LEAD_LD="<Fill the path to the output directory of 04_get_ld.lead.snp.sh.>"
 FUNCTION_REF="<Fill the path to the output directory of 01.prep.sh.>"
 #####################################################################################################
+
 lead_file=pd.read_table(LEAD,header=None)
 for i in range(1,24):
 	code= 'anno_{} = pd.read_table("{}"+"/"+str({})+".anno.tsv")'.format(i,FUNCTION_REF,i)

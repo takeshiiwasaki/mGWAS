@@ -1,7 +1,7 @@
 library(data.table)
 x3 <- fread("../data/metabolite_data.adjusted")
 library(readxl)
-clin <- read_excel("~/GCMS/nag.pheno/nagSexAge20160608.xlsx")
+clin <- read_excel("../data/nagSexAge20160608.xlsx")
 
 y3 <- merge(x3,clin,by.y="ID",by.x="NAG_ID")
 colnames(y3) <- chartr("-() , ","______",colnames(y3))
