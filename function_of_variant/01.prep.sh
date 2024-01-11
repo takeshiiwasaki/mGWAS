@@ -1,7 +1,6 @@
 #!/bin/bash
 
 export PATH=$PATH:~/src/annovar
-export LD_LIBRARY_PATH=/mnt/file1/kamatani/local/lib:/mnt/file1/kamatani/local/lib64
 export PATH=$PATH:~/src/vcftools/src/cpp
 
 for i in `seq 1 22` 
