@@ -1,9 +1,10 @@
 #!/bin/bash
 
-INPUT="<Please fill in the path to input file, in which the first column represents the chromosome, and the second column represents SNPID>"
-OUTPUT="<Please fill in the path to onput directory>"
-LD_REF="<Please fill in the path to the directory of 1KG reference.>"
+INPUT="data/04_get_ld.txt"    #Please fill in the path to input file, in which the first column represents the chromosome, and the second column represents SNPID
+OUTPUT="04_get_ld_lead_snp"   #Please fill in the path to onput directory
+LD_REF="function_of_variant"  #Please fill in the path to the directory of 1KG reference.
 
+mkdir $OUTPUT
 ln=`wc -l $INPUT | awk '{print $1}'`
 for i in `seq 1 $ln`
 do

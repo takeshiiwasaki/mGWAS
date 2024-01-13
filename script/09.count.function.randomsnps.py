@@ -6,9 +6,9 @@ import collections
 import itertools
 
 ####################################################################################################
-LEAD="<Fill the path to input file of 04_get_ld.lead.snp.sh.>"
-RANDOMSNP_LD="<Fill the path to the output directory of 07.get.ld.random.snp.slurm.>"
-FUNCTION_REF="<Fill the path to the output directory of 01.prep.sh.>"
+LEAD="data/04_get_ld.txt"           #Fill the path to input file of 04_get_ld.lead.snp.sh.
+RANDOMSNP_LD="08_get_ld_random_snp" #Fill the path to the output directory of 08.get.ld.random.snp.slurm.
+FUNCTION_REF="function_of_variant"  #Fill the path to the output directory of 01.prep.sh.
 #####################################################################################################
 lead_file=pd.read_table(LEAD,header=None)
 for i in range(1,24):

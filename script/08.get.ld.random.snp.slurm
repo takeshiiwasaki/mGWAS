@@ -4,9 +4,9 @@
 #SBATCH -J job
 
 ##############################################################################################################
-INPUT="<Fill the path to the output directory of 06.get.random.snp.sh.>"
-OUTPUT="<Output directory>"
-LD_REF="<Fill the path to the output directory of 01.prep.sh.>"
+INPUT="data/06_CHR_MAF.txt"   #Fill the path to the output directory of 06.get.random.snp.sh.
+OUTPUT="08_get_ld_random_snp" #Please fill in the path to onput directory
+LD_REF="function_of_variant"  #Fill the path to the output directory of 01.prep.sh.
 ##############################################################################################################
 
 p=${SLURM_ARRAY_TASK_ID}

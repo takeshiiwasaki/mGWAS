@@ -3,18 +3,23 @@ import pandas as pd
 import numpy as np
 from statistics import mean, stdev
 
+##############################################################################################################
+CASE="04_get_ld_lead_snp"      #Fill the path to the output directory of 04_get_ld.lead.snp.sh
+CONTROL="08_get_ld_random_snp" #Fill the path to the output directory of 08.get.ld.random.snp.slurm
+##############################################################################################################
+
 result=pd.DataFrame()
 a=0
 for f in ["exonic","splicing"]:
 	result.loc[a,"Function"]=f
 	case=0
-	d=pd.read_table("~/GCMS/permutation.median.PC10/01data/case.ld/result")
+	d=pd.read_table(CASE+"/result")
 	for i in range(len(d)):
 		if f in d.loc[i,:].tolist():
 			case=case+1
 	control=[]
 	for i in range(1,1001):
-		d=pd.read_table("~/GCMS/permutation.median.PC10/01data/control.ld/"+str(i)+"/result",header=None)
+		d=pd.read_table(CONTROL+"/"+str(i)+"/result",header=None)
 		p_count=0
 		for i in range(len(d)):
 			if f in d.loc[i,:].tolist():
@@ -35,4 +40,4 @@ for f in ["exonic","splicing"]:
 	result.loc[a,"pvalue"]=pvalue
 	a=a+1
 
-result.to_csv("result.xls",sep="\t",index=False)
+result.to_csv("result/result.xls",sep="\t",index=False)
