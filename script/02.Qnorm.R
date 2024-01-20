@@ -1,8 +1,12 @@
+#The first argument  : Corrected metabolite data (example data: "data/01_metabolite_data_corrected.xls")
+#The second argument ; Covariate file which contains unwanted features, such as age, sex (example "data:data/agesex.xls")
+#The third argement  : Output file (example:"data/02_metabolite_data_normalized.xls")
 library(data.table)
-x3 <- fread("data/01_metabolite_data_corrected.xls")
+args <- commandArgs(trailingOnly = T)
+x3 <- fread(args[1])
 library(readxl)
 #clin <- read_excel("data/agesex.xlsx")
-clin <- read.table("data/agesex.xls",header=1)
+clin <- read.table(args[2],header=1)
 y3 <- merge(x3,clin,by.y="ID",by.x="ID")
 colnames(y3) <- chartr("-() , ","______",colnames(y3))
 
@@ -30,4 +34,4 @@ getQnormDf <- function(r, outF)
   write.table(r.1, outF,col.names = T,row.names = F,quote = F,sep = "\t")
 }
 
-getQnormDf(y3,"data/02_metabolite_data_normalized.xls")
+getQnormDf(y3,args[3])
