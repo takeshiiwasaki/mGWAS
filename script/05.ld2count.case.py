@@ -6,9 +6,9 @@ import collections
 import itertools
 
 #####################################################################################################
-LEAD="data/04_get_ld.txt"          #<Fill the path to input file of 04_get_ld.lead.snp.sh.>"
-LEAD_LD="04_get_ld_lead_snp"       #Fill the path to the output directory of 04_get_ld.lead.snp.sh.>"
-FUNCTION_REF="function_of_variant" #Fill the path to the output directory of 01.prep.sh.>"
+LEAD="data/04_get_ld.txt"          #Fill the path to input file of "04_get_ld.lead.snp.sh."
+LEAD_LD="04_get_ld_lead_snp"       #Fill the path to the output directory of "04_get_ld.lead.snp.sh."
+FUNCTION_REF="function_of_variant" #Fill the path to the output directory of "01.prep.sh."
 #####################################################################################################
 
 lead_file=pd.read_table(LEAD,header=None)

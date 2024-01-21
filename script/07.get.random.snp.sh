@@ -1,9 +1,9 @@
 #!/bin/bash
 ##############################################################################################################
-INPUT="data/06_CHR_MAF.txt"            #Please fill in the path to input file, in which the first column represents the chromosome, and the second column represents minor allele frequency
-OUTPUT="07_get_random_snp"             #Please fill in the path to onput directory
-TMP_OUTPUT1="07_get_random_snp_tmp1"   #Please fill in the path to onput directory   
-TMP_OUTPUT2="07_get_random_snp_tmp2"   #Please fill in the path to onput directory
+INPUT="data/06_CHR_MAF.txt"            #Please fill in the path to the output file of 06.get.random.snp.sh.
+OUTPUT="07_get_random_snp"             #Please fill in the path to output directory
+TMP_OUTPUT1="07_get_random_snp_tmp1"   #Please fill in the path to temporal output directory   
+TMP_OUTPUT2="07_get_random_snp_tmp2"   #Please fill in the path to temporal output directory
 MAF_REF="function_of_variant"          #Fill the path to the output directory of 01.prep.sh.
 N_PERM=1000
 ##############################################################################################################
