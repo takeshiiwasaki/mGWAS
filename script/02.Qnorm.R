@@ -4,8 +4,6 @@
 library(data.table)
 args <- commandArgs(trailingOnly = T)
 x3 <- fread(args[1])
-library(readxl)
-#clin <- read_excel("data/agesex.xlsx")
 clin <- read.table(args[2],header=1)
 y3 <- merge(x3,clin,by.y="ID",by.x="ID")
 colnames(y3) <- chartr("-() , ","______",colnames(y3))
