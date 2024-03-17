@@ -45,10 +45,10 @@ done
 
 wait
 
-##Frequency information (IF you want to calculate the LD and frequency information, please specify the population to keep by '--keep' option
+##If you want to calculate the LD and frequency in the other population, please modify the content of "EAS.fam". For example, if you want to calculate LD in the European population please replace the EAS.fam with EUR.fam.
 for i in `seq 1 22` X
 do
-plink --double-id --freq --make-bed --out chr"$i" --vcf $i.anno.vcf.hg19_multianno.vcf
+plink --double-id --freq --make-bed --out chr"$i" --vcf $i.anno.vcf.hg19_multianno.vcf --keep EAS.fam
 done
 
 for i in `seq 1 22` X

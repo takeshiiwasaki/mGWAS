@@ -10,7 +10,7 @@ CONTROL="08_get_ld_random_snp" #Fill the path to the output directory of 08.get.
 
 result=pd.DataFrame()
 a=0
-for f in ["exonic","splicing"]:
+for f in ["exonic","intergenic","intronic","splicing","UTR3","UTR5","frameshift_deletion","frameshift_insertion","nonframeshift_deletion","nonframeshift_insertion","nonsynonymous_SNV","stopgain","stoploss","synonymous_SNV","1_Active_Promoter","2_Weak_Promoter","3_Poised_Promoter","4_Strong_Enhancer","5_Strong_Enhancer","6_Weak_Enhancer","7_Weak_Enhancer","8_Insulator","9_Txn_Transition","10_Txn_Elongation","11_Weak_Txn","12_Repressed","13_Heterochrom/lo","14_Repetitive/CNV","15_Repetitive/CNV"]:
 	result.loc[a,"Function"]=f
 	case=0
 	d=pd.read_table(CASE+"/result")
